@@ -1,5 +1,10 @@
 <?php
-	$db = mysqli_connect('p541762.mysql.ihc.ru', 'p541762_cr','68944HayNf','p541762_cr');
+	$error = "";
+	$host = 'localhost'; // адрес сервера 
+	$database = 'testing'; // имя базы данных
+	$user = 'root'; // имя пользователя
+	$password = ''; // пароль
+	$db = mysqli_connect($host, $user, $password, $database);
 	mysqli_query($db,"set names utf8");
 
 	$btc5k = mysqli_query($db, "SELECT * FROM btc5k WHERE active = 1 AND visible = 1 ORDER BY price ASC LIMIT 1");

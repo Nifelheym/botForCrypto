@@ -28,7 +28,12 @@ $currents = array('162' => 'zcash', '139' => 'eth', '140' => 'dash', '172' => 'b
 
 $from_cy = 63;//QIWI
 
-$db = mysqli_connect('p541762.mysql.ihc.ru', 'p541762_cr','68944HayNf','p541762_cr');
+$error = "";
+$host = 'localhost'; // адрес сервера 
+$database = 'testing'; // имя базы данных
+$user = 'root'; // имя пользователя
+$password = ''; // пароль
+$db = mysqli_connect($host, $user, $password, $database);
 mysqli_query($db,"set names utf8");
 
 foreach ($currents as $currents_key => $current) {

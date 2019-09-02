@@ -30,7 +30,12 @@
 				$doc = phpQuery::newDocument($res->body);
 				$block = $doc->find('div.sc-62mpio-0.sc-1yysggs-2.kEGjPf')->text();
 				$block = str_replace("–","", $block);
-				$db = mysqli_connect('p541762.mysql.ihc.ru', 'p541762_cr','68944HayNf','p541762_cr');
+				$error = "";
+				$host = 'localhost'; // адрес сервера 
+				$database = 'testing'; // имя базы данных
+				$user = 'root'; // имя пользователя
+				$password = ''; // пароль
+				$db = mysqli_connect($host, $user, $password, $database);
 				mysqli_query($db,"set names utf8");
 				$conn = mysqli_query($db, "SELECT * FROM binance WHERE pair = '$curr[$i]' ");
 				$row = mysqli_fetch_array($conn);

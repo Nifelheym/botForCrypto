@@ -17,7 +17,12 @@
 
 	$tables = array( 'bch3k', 'bch5k', 'dash3k', 'dash5k','btc5k','doge3k','doge5k','etc3k','etc5k','eth3k','eth5k','xrp3k','xrp5k','zcash3k','zcash5k');
     
-    $db = mysqli_connect('p541762.mysql.ihc.ru', 'p541762_cr','68944HayNf','p541762_cr');
+	$error = "";
+	$host = 'localhost'; // адрес сервера 
+	$database = 'testing'; // имя базы данных
+	$user = 'root'; // имя пользователя
+	$password = ''; // пароль
+	$db = mysqli_connect($host, $user, $password, $database);
 	mysqli_query($db,"set names utf8");
 
 	for($l = 0; $l < count($links); $l++){

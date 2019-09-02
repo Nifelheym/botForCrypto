@@ -1,7 +1,13 @@
 <?php
 	session_start();
 	$error = "";
-	$db = mysqli_connect('p541762.mysql.ihc.ru', 'p541762_cr','68944HayNf','p541762_cr');
+	$host = 'localhost'; // адрес сервера 
+	$database = 'testing'; // имя базы данных
+	$user = 'root'; // имя пользователя
+	$password = ''; // пароль
+	$db = mysqli_connect($host, $user, $password, $database);
+	// or die("Ошибка " . mysqli_error($link));
+
 	if(isset($_POST['log_in'])){
 		$login = mysqli_real_escape_string($db,$_POST['login']);
 		$password = mysqli_real_escape_string($db,$_POST['password']);

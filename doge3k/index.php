@@ -4,7 +4,12 @@ session_start();
 		header("Location: ../index.php");
 		exit;
 	}
-	$db = mysqli_connect('p541762.mysql.ihc.ru', 'p541762_cr','68944HayNf','p541762_cr');
+	$error = "";
+	$host = 'localhost'; // адрес сервера 
+	$database = 'testing'; // имя базы данных
+	$user = 'root'; // имя пользователя
+	$password = ''; // пароль
+	$db = mysqli_connect($host, $user, $password, $database);
 	mysqli_query($db,"set names utf8");
 	$get = mysqli_query($db, "SELECT * FROM doge3k WHERE visible ='1'  ORDER BY price ASC");
 	
